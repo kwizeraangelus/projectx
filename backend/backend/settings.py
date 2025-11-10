@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'profiles',
     'innovations',
     'events',
+    'admin_panel',
 ]
 
 

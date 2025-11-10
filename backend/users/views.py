@@ -61,6 +61,8 @@ class LoginView(APIView):
             redirect_to = '/university'
         elif user.user_category == 'conf_organizer':
             redirect_to = '/organizer'
+        elif user.user_category == 'admin':
+            redirect_to = '/admin'
 
         response = Response({
             'message': 'Login successful',

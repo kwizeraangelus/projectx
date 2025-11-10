@@ -10,6 +10,7 @@ USER_CATEGORIES = (
     ('university', _('University')),
     ('conf_organizer', _('Conference Organizer')),
     ('public_visitor', _('Public Visitor')),
+    ('admin', _('admin')),
 )
 
 
