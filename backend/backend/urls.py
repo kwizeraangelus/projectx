@@ -24,4 +24,8 @@ urlpatterns = [
     path('api/', include('users.urls')),
     path('api/', include('innovations.urls')), 
     path('api/', include('profiles.urls')),
+<<<<<<< HEAD
+=======
+    path('api/', include('admin_panel.urls')),
+>>>>>>> 5a20e0c6e01095d588952b8cca9e49ee2071e1f4
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # innovations/views.py (FULL ADJUSTED FILE)
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -16,6 +17,24 @@ class UploadCreateView(APIView):
     # ... (Your post method) ...
     def post(self, request):
         # ... (Your post logic) ...
+=======
+# uploads/views.py
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.parsers import MultiPartParser, FormParser
+from .models import Upload
+from .serializers import UploadSerializer
+from profiles.models import ResearcherProfile
+from rest_framework.decorators import api_view, permission_classes
+from .serializers import BookDetailSerializer
+
+class UploadCreateView(APIView):
+    permission_classes = [IsAuthenticated]
+    parser_classes = [MultiPartParser, FormParser]
+
+    def post(self, request):
+>>>>>>> 5a20e0c6e01095d588952b8cca9e49ee2071e1f4
         try:
             profile = request.user.researcher_profile
         except ResearcherProfile.DoesNotExist:
@@ -38,14 +57,19 @@ class UploadCreateView(APIView):
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
 
+<<<<<<< HEAD
 
 class MyUploadsView(APIView):
     # ... (Your existing MyUploadsView code remains unchanged) ...
+=======
+class MyUploadsView(APIView):
+>>>>>>> 5a20e0c6e01095d588952b8cca9e49ee2071e1f4
     permission_classes = [IsAuthenticated]
     def get(self, request):
         uploads = Upload.objects.filter(user=request.user).order_by('-uploaded_at')
         return Response(UploadSerializer(uploads, many=True).data)
 
+<<<<<<< HEAD
 # --- NEW Public Publications & Filtering View ---
 class PublicationListAPIView(generics.ListAPIView):
     queryset = Upload.objects.all() 
@@ -62,3 +86,21 @@ class PublicationListAPIView(generics.ListAPIView):
             queryset = queryset.filter(field_of_study__iexact=field) 
             
         return queryset.order_by('-uploaded_at')
+=======
+
+
+
+
+
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def book_detail(request, pk):
+    try:
+        book = Upload.objects.get(pk=pk, user=request.user, status='approved')
+        serializer = BookDetailSerializer(book, context={'request': request})
+        return Response(serializer.data)
+    except Upload.DoesNotExist:
+        return Response({'error': 'Book not found'}, status=404)
+>>>>>>> 5a20e0c6e01095d588952b8cca9e49ee2071e1f4

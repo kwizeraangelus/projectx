@@ -7,8 +7,16 @@ from django.contrib.auth import authenticate
 from rest_framework_simplejwt.tokens import RefreshToken
 from .models import CustomUser
 from .serializers import UserProfileSerializer
+<<<<<<< HEAD
 
 class RegisterView(APIView):
+=======
+from django.conf import settings
+from rest_framework.permissions import AllowAny
+
+class RegisterView(APIView):
+    permission_classes = [AllowAny]
+>>>>>>> 5a20e0c6e01095d588952b8cca9e49ee2071e1f4
     def post(self, request):
         serializer = UserProfileSerializer(data=request.data)
         if serializer.is_valid():
@@ -25,6 +33,7 @@ class RegisterView(APIView):
             print("Validation errors:", serializer.errors)  # ← Debug
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+<<<<<<< HEAD
 # users/views.py
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -33,6 +42,10 @@ from django.contrib.auth import authenticate
 from .models import CustomUser
 from django.conf import settings
 from rest_framework.permissions import AllowAny
+=======
+
+
+>>>>>>> 5a20e0c6e01095d588952b8cca9e49ee2071e1f4
 
 # users/views.py
 class LoginView(APIView):
@@ -64,6 +77,11 @@ class LoginView(APIView):
             redirect_to = '/university'
         elif user.user_category == 'conf_organizer':
             redirect_to = '/organizer'
+<<<<<<< HEAD
+=======
+        elif user.user_category == 'admin':
+            redirect_to = '/admin'
+>>>>>>> 5a20e0c6e01095d588952b8cca9e49ee2071e1f4
 
         response = Response({
             'message': 'Login successful',

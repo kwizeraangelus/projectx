@@ -58,7 +58,10 @@ env/
 # Django specific files
 staticfiles/
 media/
+<<<<<<< HEAD
 
 
 
 node_modules/
+=======
+>>>>>>> 5a20e0c6e01095d588952b8cca9e49ee2071e1f4

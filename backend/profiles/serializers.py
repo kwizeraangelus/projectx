@@ -15,5 +15,13 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ResearcherProfile
+<<<<<<< HEAD
         fields = '__all__'
+=======
+        fields = [
+            'id', 'user', 'national_id', 'age', 'phone', 
+            'degree', 'university', 'profile_image', 
+            'profile_complete'
+        ]
+>>>>>>> 5a20e0c6e01095d588952b8cca9e49ee2071e1f4
         read_only_fields = ['profile_complete']

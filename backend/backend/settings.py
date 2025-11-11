@@ -46,7 +46,11 @@ INSTALLED_APPS = [
     'profiles',
     'innovations',
     'events',
+<<<<<<< HEAD
     
+=======
+    'admin_panel',
+>>>>>>> 5a20e0c6e01095d588952b8cca9e49ee2071e1f4
 ]
 
 
@@ -126,8 +130,11 @@ CORS_ALLOW_HEADERS = [
 
 
 MIDDLEWARE = [
+<<<<<<< HEAD
     'corsheaders.middleware.CorsMiddleware', # <-- Add this at the very top
     'django.middleware.security.SecurityMiddleware',
+=======
+>>>>>>> 5a20e0c6e01095d588952b8cca9e49ee2071e1f4
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -166,7 +173,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'projectx',
         'USER': 'root',   # or your mysql username
+<<<<<<< HEAD
         'PASSWORD': 'Elie@123!',
+=======
+        'PASSWORD': 'NGLtree11@',
+>>>>>>> 5a20e0c6e01095d588952b8cca9e49ee2071e1f4
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -181,7 +192,10 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]
+<<<<<<< HEAD
 CORS_ALLOW_ALL_ORIGINS = True
+=======
+>>>>>>> 5a20e0c6e01095d588952b8cca9e49ee2071e1f4
 import os
 from pathlib import Path
 

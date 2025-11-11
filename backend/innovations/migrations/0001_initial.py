@@ -23,8 +23,13 @@ class Migration(migrations.Migration):
                 ('cover_image', models.ImageField(upload_to='innovation/covers/')),
                 ('title', models.CharField(max_length=255)),
                 ('authors', models.CharField(max_length=255)),
+<<<<<<< HEAD
                 ('year_published', models.PositiveIntegerField()),
                 ('short_description', models.TextField(max_length=500)),
+=======
+                ('year', models.PositiveIntegerField()),
+                ('description', models.TextField(max_length=500)),
+>>>>>>> 5a20e0c6e01095d588952b8cca9e49ee2071e1f4
                 ('file', models.FileField(upload_to='innovation/files/')),
                 ('status', models.CharField(choices=[('pending', 'Pending Review'), ('approved', 'Approved'), ('rejected', 'Rejected'), ('draft', 'Draft')], default='pending', max_length=10)),
                 ('uploaded_at', models.DateTimeField(auto_now_add=True)),

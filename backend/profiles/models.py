@@ -24,7 +24,11 @@ class ResearcherProfile(models.Model):
     def save(self, *args, **kwargs):
         required = [
             self.user.username, self.user.email, self.phone, self.degree,
+<<<<<<< HEAD
             self.age, self.national_id, self.orcid
+=======
+            self.age, self.national_id,
+>>>>>>> 5a20e0c6e01095d588952b8cca9e49ee2071e1f4
         ]
         if self.university:
             required.append(self.university)
